@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>关键指标</h2>
+      <div class="metric">跳出率: <strong>{{ metrics.bounce_rate }}%</strong></div>
+      <div class="metric">互动率: <strong>{{ metrics.engagement_rate }}%</strong></div>
+      <div class="metric">CTR: <strong>{{ metrics.ctr }}%</strong></div>
+      <div class="metric">转化率: <strong>{{ metrics.conversion_rate }}%</strong></div>
+    </aside>
+    <section class="mainpane">
+      <h2>诊断结论</h2>
+      <div class="card">
+        <h3>健康评分: {{ diag.score }}/100</h3>
+        <p>{{ diag.conclusion }}</p>
+      </div>
+      <div class="card">
+        <h3>建议动作</h3>
+        <ul>
+          <li>优化首屏与加载速度</li>
+          <li>增加互动提示和沉浸式素材</li>
+          <li>测试不同的 CTA 文案</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+{% endblock %}

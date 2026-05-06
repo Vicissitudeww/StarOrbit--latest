@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>星轨 Demo</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/dashboard">数据诊断大屏</a>
+      <a href="/scheduler">智能排期沙盘</a>
+    </nav>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

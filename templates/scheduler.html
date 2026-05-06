@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>智能排期沙盘</h2>
+  <form id="sched-form" method="post">
+    <label>开始日期: <input type="date" name="start_date" required value="{{ params.start_date if params else '' }}"></label>
+    <label>天数: <input type="number" name="days" min="1" value="{{ params.days if params else 14 }}"></label>
+    <label>每天插槽: <input type="number" name="slots_per_day" min="1" value="{{ params.slots_per_day if params else 1 }}"></label>
+    <button type="submit">一键寻优</button>
+  </form>
+
+  <div id="calendar">
+    {% if schedule %}
+      <h3>排期结果</h3>
+      <div class="grid">
+        {% for row in schedule %}
+          <div class="day">
+            <div class="date">{{ row.date }}</div>
+            <div class="events">{{ row.title }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>填写参数后点击“一键寻优”生成排期。</p>
+    {% endif %}
+  </div>
+
+{% endblock %}
