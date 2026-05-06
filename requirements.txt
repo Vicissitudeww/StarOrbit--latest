@@ -1,4 +1,13 @@
-Flask==2.3.2
+# 基础核心库
+numpy==1.26.4
+pandas==2.2.3
+
+# 可视化与界面（建议升级 streamlit 确保与 pandas 2.x 兼容）
+streamlit>=1.35.0
+plotly==5.17.0
+
+# 如果你确实需要 Flask 做后端才保留
+# Flask==2.3.2Flask==2.3.2
 numpy==1.26.4
 pandas==2.2.3
 python-dateutil==2.8.2
